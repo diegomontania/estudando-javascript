@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aula 011</title>
+
+        <!-- aplicando um estilo css -->
+        <style>
+            body{
+                background-color: rgb(0, 171, 250);
+                color: white;
+                font: arial;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>Funcoes</h1>
+
+        <!-- Javascript -->
+        <script> 
+            // Estudar mais sobre js : https://www.youtube.com/c/dpwoficial/search?query=javascript
+
+            //funcao normal
+            var valor1 = 1;
+            var valor2 = 2;
+
+            var recebeValor1 = minhaFuncaoSoma(1,2);
+            console.log("Funcao normal " + recebeValor1);
+
+            function minhaFuncaoSoma(v1, v2){
+                return v1 + v2;
+            }
+
+            // https://www.youtube.com/watch?v=S5Mn0qQzJ-0&ab_channel=dpw
+            //funcao flecha (arrow functions)
+            //são funções anônimas, basicamente a mesma funcao com menos linhas
+            //sem nome e até sem chaves. Deve-se atribuí-las a uma variavel ou constante
+            //Tudo apos a "Flecha" é considerado como o corpo da funcao
+
+            //se for uma função com somente uma instrução, 
+            //não é obrigatorio utilizar 'return'
+
+            //funcao não possui nenhum parametro, utiliza-se apenas os parenteses
+            // para dizer que existe uma arrow function
+            var recebeValor2 = () => Math.random();
+
+            console.log("Sem parametros " + recebeValor2());
+            console.log("------");
+            
+            //uma instrução, mais de dois parametros com um return
+            var recebeValor3 = (v1, v2) => {
+                return v1 + v2;
+            }
+
+            console.log("Dois parametros " + recebeValor3(valor1, valor2));
+            console.log("------");
+
+            //com chaves pois possui mais de uma instrução e return removido
+            var recebeValor4 = (v1, v2) => {
+                var resultado = v1 + v2; 
+                return resultado * 5; 
+            };
+
+            console.log("Dois parametros com chaves e return " + recebeValor4(valor1, valor1));
+            console.log("------");
+
+            //até mesmo as chaves podem ser removidas se houver apenas uma única instrução!
+            var recebeValor5 = (v1, v2) => v1 + v2;
+
+            console.log("Dois parametros ocultando return sem chaves " + recebeValor5(valor1, valor1));
+            console.log("------");
+
+            //se for apenas 1 unico parametro, pode-se ocultar os parentes também!
+            var recebeValor6 = v1 => v1 + 10;
+
+            console.log("Um parametro ocultando parenteses " + recebeValor6(valor1));
+            console.log("------");
+
+            //funcao normal
+            document.addEventListener('click', function () {
+                console.log('click');
+            });
+
+            //funcao arrow
+            document.addEventListener('click', () => console.log('click'));
+        </script>
+    </body>
+</html>

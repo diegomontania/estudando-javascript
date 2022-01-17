@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aula 008</title>
+
+        <!-- aplicando um estilo css -->
+        <style>
+            body{
+                background-color: rgb(0, 171, 250);
+                color: white;
+                font: arial;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>Switch case</h1>
+
+        Valor inserido: <input type="number" name="txtValor" id="txtValor">Km/h
+        <input type="button" value="Verificar" onclick="verificarValor()">
+
+        <div id="res">   
+
+        </div>
+
+        <!-- Javascript -->
+        <script> 
+
+            function verificarValor() {  
+
+                var txtValor = window.document.querySelector('input#txtValor');
+                var resultado = window.document.querySelector('div#res');
+                var valorInserido = Number(txtValor.value);
+
+                switch (valorInserido != null) {
+                    case valorInserido > 100:
+                        resultado.innerHTML = "Maior que 1";
+                        break;
+                    case valorInserido < 100 && valorInserido > 0:
+                        resultado.innerHTML = "Menor que 1";
+                        break;
+                    default:
+                        resultado.innerHTML = "Por favor insira um valor positivo!"
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>

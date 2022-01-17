@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aula 006</title>
+
+        <!-- aplicando um estilo css -->
+        <style>
+            div#area{
+                background: green;
+                color: white;
+                width: 200px;
+                height: 200px;
+                line-height: 200px;
+                text-align: center;
+            }
+        </style>
+
+    </head>
+    <body>
+        
+        <h1>Somando Valores</h1>
+        <input type="number" name="txtNumero1" id="txtNumero1"> + 
+        <input type="number" name="txtNumero2" id="txtNumero2">
+        <input type="button" value="Somar" onclick="executar()">
+
+        <div id="resultado"> </div>
+
+        <!-- Javascript -->
+        <script> 
+            //eventos doom são qualquer coisa que possa acontecer
+            //em um elemento
+            //mouseenter, mouseout, mousemove, click, mousedown, mouseup, etc
+
+            //metodos
+            function executar() {
+                //recebendo elementos
+                var txtNumero1 = window.document.getElementById("txtNumero1");
+                var txtNumero2 = window.document.getElementById("txtNumero2");
+                var divResultado = window.document.getElementById("resultado");
+
+                //convertendo os textos inseridos em numerico
+                var valor1 = Number(txtNumero1.value);
+                var valor2 = Number(txtNumero2.value);
+
+                //mostra resultado na div
+                divResultado.innerHTML = somar(valor1, valor2);
+            }
+
+            function somar(valor1, valor2) 
+            {
+                var resultado = valor1 + valor2;
+                return `A soma entre ${valor1} e ${valor2} foi ${resultado}.`;
+            }
+
+        </script>
+    </body>
+</html>

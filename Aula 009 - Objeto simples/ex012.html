@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aula 012</title>
+
+        <!-- aplicando um estilo css -->
+        <style>
+            body{
+                background-color: rgb(0, 171, 250);
+                color: white;
+                font: arial;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>Objetos</h1>
+
+        <!-- Javascript -->
+        <script> 
+            
+            //declara um objeto em javascript
+            let Pessoa = {
+                nome: "Jose",
+                idade: 12,
+                altura: 1.85,
+                sexo: "M",
+                peso: 87,
+                engordar(peso){
+                    this.peso += peso;
+                } //cria uma funcao como atributo
+            }
+
+            //print do objeto e suas propriedades
+            console.log(Pessoa);
+            console.log(Pessoa.nome);
+            console.log(Pessoa.peso);
+
+            console.log("---------");
+            
+            //utiliza metodo do objeto
+            Pessoa.engordar(100);
+            console.log(Pessoa.peso);
+
+        </script>
+    </body>
+</html>

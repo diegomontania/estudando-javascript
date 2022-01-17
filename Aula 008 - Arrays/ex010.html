@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aula 010</title>
+
+        <!-- aplicando um estilo css -->
+        <style>
+            body{
+                background-color: rgb(0, 171, 250);
+                color: white;
+                font: arial;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>Arrays</h1>
+
+        <!-- Javascript -->
+        <script> 
+
+            //declarando array
+            let meyArrayVazio = [];
+            console.log(`Primeira posição do meu array vazio ${meyArrayVazio[0]}`);
+            console.log("------------");
+
+            let meuArray = [
+                2,6,8,9,10
+            ];
+            console.log(`Primeira posição do meu array ${meuArray[0]}`);
+            console.log("------------");
+
+            //foreach array
+            meuArray.forEach(i => {
+                console.log(`meu index ${meuArray.indexOf(i)} meu valor ${i} até 5 posicoes`);
+            });
+            console.log("------------");
+
+            //adicionando um item ao array
+            //O array só vai até a quinta posição nesta linha, sabendo-se que a ultima posição é 4.
+            //Criando a posição 5, o javascript adiciona ao final o novo valor, já que a posição 5 não existe
+            meuArray[5] = 11;
+            
+            //Ao utilizar .push que adiciona sempre ao final do array não importando
+            //a ultima posição do mesmo, não sendo necessário se importar com a ultima posição
+            meuArray.push(7);
+
+            //Ao utilizar.sort organiza o array pelos valores, do menor para o maior
+            //por padrão os valores como strings em ordem alfabética e crescente
+            //para organizar apenas os numeros, está sendo passada a função como parametro
+            meuArray.sort(function(a, b){return a-b});
+
+            //for array - exibindo os novos itens adicionados ao array dinamicamente
+            for (let i = 0; i < meuArray.length; i++) {
+                console.log(`meu index ${i} meu valor deste index ${meuArray[i]}`);
+            }
+
+        </script>
+    </body>
+</html>

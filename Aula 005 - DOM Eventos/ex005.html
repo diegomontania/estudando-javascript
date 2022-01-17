@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aula 005</title>
+
+        <!-- aplicando um estilo css -->
+        <style>
+            div#area{
+                background: green;
+                color: white;
+                width: 200px;
+                height: 200px;
+                line-height: 200px;
+                text-align: center;
+            }
+
+            /* body{
+                background-color: rgb(0, 171, 250);
+                color: white;
+                font: arial;
+            } */
+        </style>
+
+    </head>
+    <body>
+        <!-- utilizando evento click no html -->
+        <!-- <div id="area" onclick="meuMetodoClicar()" onmouseenter="meuMetodoEntrar()" onmouseout="meuMetodoSair()">
+            Clique aqui
+        </div> -->
+
+        <!-- utilizando html puro sem js no elemento -->
+        <div id="area">
+            Clique aqui
+        </div>
+
+        <!-- Javascript -->
+        <script> 
+            //eventos doom são qualquer coisa que possa acontecer
+            //em um elemento
+            //mouseenter, mouseout, mousemove, click, mousedown, mouseup, etc
+            
+            //recebe o elemento
+            var a = window.document.getElementById("area");
+
+            //adiciona "listener" ou seja, fica "ouvindo" um evento de um elemento
+            //sem a necessidade de ter evento no html
+            a.addEventListener("click", meuMetodoClicar);
+            a.addEventListener("mouseenter", meuMetodoEntrar);
+            a.addEventListener("mouseout", meuMetodoSair);
+
+            //metodos
+            function meuMetodoClicar() {
+                a.innerText = "Clicou no elemento!";
+                a.style.background = "red";
+            }
+
+            function meuMetodoEntrar() {
+                a.innerText = "Entrou no elemento!";
+                a.style.background = "green";
+            }
+
+            function meuMetodoSair() {
+                a.innerText = "Saiu do elemento!";
+                a.style.background = "blue";
+            }
+
+        </script>
+    </body>
+</html>
