@@ -1,0 +1,82 @@
+tipos primitivos
+number, string, boolean, null, undefined, object, function
+
+//numero
+var myNumber = 1;
+obs : dentro de number tem Infinity e NaN (not a number).
+
+//string
+var myString = "diego";
+
+//objeto vazio
+var myObject = {};
+
+//objeto com propriedades
+var man = {
+    hands: 2,
+    legs: 2,
+    heads: 1
+};
+obs : dentro de objeto tem array
+
+//array
+var myArray = [1,2,3];
+
+//function
+function fun(){}
+
+typeof : retorna o tipo de uma variavel.
+
+----------------------------
+
+//Hoisting: A Problem with Scattered vars
+0. // antipattern
+1. myname = "global"; // global variable
+2. function func() {
+3.     alert(myname); // "undefined"
+4.     var myname = "local";
+5.     alert(myname); // "local"
+6. }
+7. func();
+
+comentário : no caso da variavel global "myname" ela não está sendo chamada na linha 3. Não está chamando a variavel global.
+Ali está chamando uma outra variavel local chamada "myname" que nao existe ainda, pois a sua declaração está na linha 4.
+Na linha 4 é criado uma variavel local que ai sim pode ser acessada na linha 5.
+
+//loop
+var maxArray = myarray.length;
+for (var i = 0; i < maxArray; i++) {
+    // do something with myarray[i]
+}
+
+-------
+
+Ao fazer loop em um objeto para saber suas propriedades, deve-se utilizar hasOwnProperty(), como um filtro. 
+Que retorna apenas as propriedades de um objeto, nao levando em conta suas funcoes/metodos.
+
+//Declarando :
+var man = {
+    hands: 2,
+    legs: 2,
+    heads: 1,
+    foots: 2
+};
+
+// somewhere else in the code
+// a method was added to all objects
+if (typeof  Object.prototype.clone === "undefined") {
+    Object.prototype.clone = function () {};
+}
+
+--------
+
+for (var i in man) {
+    if (man.hasOwnProperty(i)) { // filter
+        console.log(i, ":", man[i]);
+    }
+}
+/*
+result in the console
+hands : 2
+legs : 2
+heads : 1
