@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aula 004</title>
+
+        <!-- aplicando um estilo css -->
+        <style>
+            body{
+                background-color: rgb(0, 171, 250);
+                color: white;
+                font: arial;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>Iniciando estudos com o doom</h1>
+
+        <!-- o que é dom (Documento object model)
+        modelo de objeto para documentos, ou seja, conjunto de objetos dentro do navegador
+        que dá acessos aos componentes internos de um site atual.
+        Montando uma arvore hierarquica nos elementos
+
+        o dom começa na raiz da arvore, objeto chamado 'window'
+
+        alguns objetos do dom
+        window.location (qual url, qual é a página atual)
+        window.document (qual é o corpo do documento atual)
+        window.history (que guasda o histórico de navegação)
+        entre outros...
+
+        onde um elemento é filho de outro elemento. E este mesmo elemento pode ser pai
+        de outros elementos abaixo dele -->
+
+        <p>aqui vai o resultado</p>
+        <p>Aprendendo a usar o <strong>DOM</strong> em Javascript!</p>
+
+        <div id="msgClick">Clique em mim</div>
+        
+        <div id="msg">Clique em mim</div>
+
+        <br>
+
+        <!-- Javascript -->
+        <script> 
+            //estou utilizando o `liveserver` no lugar do watch in chrome, instalando
+            //o plugin no navegador e vscode
+
+            //retornando propriedades da pagina/navegador pelo dom
+            // window.document.write(window.document.URL);
+            // window.document.write(window.navigator.appName);
+
+            //selecionando elementos
+
+            //retornando o primeiro elemento da lista com a tag P, como ele irá retornar
+            //uma lista, aqui está pegando pelo index dessa lista : 0
+            var p1 = window.document.getElementsByTagName("p")[0];
+
+            //escrevendo o texto de dentro do elemento selecionado, usando innerText
+            //innerText = pega apenas o texto, innerHTML = pega o elemento html em si com todos os seus estilos
+            //textos e etc
+            window.document.write(`O texto do elemento do primeiro elemento p: "${p1.innerText}"`);
+
+            //mudando o elemento pelo dom
+            p1.style.color = "blue";
+            p1.innerText = "OI";
+
+            //aqui nao retorna uma lista apenas um unico objeto, entao precisa selecionar qual
+            // item da lista sera retornado
+            var minhaDiv = window.document.getElementById("msgClick");
+            minhaDiv.style.background = "green";
+
+            //selecionado por seletor, utilizando querySelector 
+            // utilizando seletor do css
+
+            //div é representada por #, classe css é .
+            var utilizandoQuery = window.document.querySelector('div#msg');
+            utilizandoQuery.style.background = "Red";
+
+        </script>
+    </body>
+</html>
