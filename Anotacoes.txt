@@ -1,7 +1,6 @@
 Canal para estudo futuro : https://www.youtube.com/c/dpwoficial/search?query=javascript
 
-Próximos passos :
-- html5 e css fazer o curso
+Próximos passos de estudo:
 - funcoes
   - arrow functions
   - callbacks
@@ -9,7 +8,8 @@ Próximos passos :
   - iife javascript
 
 - javascript funcional
-- orientação a objetos (classes)
+- orientação a objetos 
+  - classes poo
 - modularização javascript
 - regex
 - json
